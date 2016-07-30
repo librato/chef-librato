@@ -1,0 +1,12 @@
+LoadPlugin "apache"
+<Plugin "apache">
+   <Instance "apache80">
+       URL "<%= @protocol %>://<%= @host %><%= @path %>?auto"
+       <% if !@user.empty? -%>
+       User "<%= @user %>"
+       <% end -%>
+       <% if !@password.empty? -%>
+       Password "<%= @password %>"
+       <% end -%>
+   </Instance>
+</Plugin>

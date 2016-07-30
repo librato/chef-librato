@@ -1,0 +1,11 @@
+name             'librato'
+maintainer       'Librato'
+maintainer_email 'support@librato.com'
+license          'All rights reserved'
+description      'Installs/Configures chef-librato'
+long_description 'Installs/Configures chef-librato'
+version          '0.1.0'
+
+depends 'yum'
+depends 'apt'
+depends 'yum-epel'

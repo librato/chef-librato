@@ -1,0 +1,34 @@
+LoadPlugin postgresql
+<Plugin postgresql>
+  <Database postgres>
+    Host "<%= @socket_file %>"
+    User "<%= @user %>"
+    Query connections
+    Query transactions
+    Query queries
+    Query query_plans
+    Query table_states
+    Query disk_io
+    Query disk_usage
+  </Database>
+<% @databases.each do |db| %>
+  <Database <%= db['name'] %>>
+    Instance "<%= db['instance'] %>"
+    Host "<%= db['host'] %>"
+  <% if db.key?('port') %>
+    Port "<%= db['port'] %>"
+  <% else %>
+    Port 5432
+  <% end %>
+    User "<%= db['user'] %>"
+  <% if db.key?('password') %>
+    Password "<%= db['password'] %>"
+  <% end %>
+  <% if db.key?('ssl_mode') %>
+    SSLMode "<%= db['ssl_mode'] %>"
+  <% else %>
+    SSLMode "Prefer"
+  <% end %>
+  </Database>
+<% end %>
+</Plugin>

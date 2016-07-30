@@ -1,0 +1,25 @@
+<LoadPlugin python>
+  Globals true
+</LoadPlugin>
+
+<Plugin python>
+  ModulePath "/opt/collectd/share/collectd"
+  ModulePath "/opt/collectd/share/collectd/pymongo.egg"
+
+  Import "collectd-mongodb"
+
+  <Module "collectd-mongodb">
+    Host "<%= @host %>"
+    Port "<%= @port %>"
+    <% if !@user.empty? %>
+    User "<%= @user %>"
+    <% end %>
+    <% if !@password.empty? %>
+    Password "<%= @password %>"
+    <% end %>
+    <% if !@database.empty? %>
+    Database "admin", <%= @database.map(&:inspect).join(', ') %>
+    <% end %>
+    Name "<%= @name %>"
+  </Module>
+</Plugin>
