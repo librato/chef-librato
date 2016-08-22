@@ -1,5 +1,5 @@
 node.default['librato']['repo_url'] = 'https://packagecloud.io/librato/'
-node.default['librato']['repo_base'] = node['platform'] == 'amazon' ? 'librato-amazon-collectd' : 'librato-collectd'
+node.default['librato']['repo_base'] = node['platform'] == 'amazon' ? 'librato-amazonlinux-collectd' : 'librato-collectd'
 
 case node['platform']
 when 'debian', 'ubuntu'
