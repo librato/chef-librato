@@ -5,7 +5,7 @@
 
   <Module "collectd-elasticsearch">
     Url "<%= @protocol %>://<%= @host %>:<%= @port %>"
-    <% if !@cluster_name.empty? %>
+    <% if !@cluster_name.nil? -%>
     Name "<%= @cluser_name %>"
     <% end %>
     Verbose <%= @verbose %>

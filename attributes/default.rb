@@ -33,8 +33,8 @@ node.default['librato']['default_plugins'] = %w(cpu df disk swap memory load)
 node.default['librato']['apache']['protocol'] = 'http'
 node.default['librato']['apache']['host'] = 'localhost'
 node.default['librato']['apache']['path'] = '/server-status'
-node.default['librato']['apache']['user'] = ''
-node.default['librato']['apache']['password'] = ''
+node.default['librato']['apache']['user'] = nil
+node.default['librato']['apache']['password'] = nil
 
 node.default['librato']['nginx']['protocol'] = 'http'
 node.default['librato']['nginx']['host'] = 'localhost'
@@ -58,7 +58,7 @@ node.default['librato']['mongodb']['host'] = 'localhost'
 node.default['librato']['mongodb']['port'] = '27017'
 node.default['librato']['mongodb']['user'] = nil
 node.default['librato']['mongodb']['password'] = nil
-node.default['librato']['mongodb']['database'] = []
+node.default['librato']['mongodb']['databases'] = []
 node.default['librato']['mongodb']['name'] = 'mongodb'
 
 node.default['librato']['zookeeper']['host'] = 'localhost'

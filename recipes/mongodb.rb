@@ -9,7 +9,7 @@ template "#{node['librato']['plugin_config_path']}/mongodb.conf" do
     port: node['librato']['mongodb']['port'],
     user: node['librato']['mongodb']['user'],
     password: node['librato']['mongodb']['password'],
-    database: node['librato']['mongodb']['database'],
+    databases: node['librato']['mongodb']['databases'],
     name: node['librato']['mongodb']['name']
   )
   notifies :restart, 'service[collectd]', :delayed

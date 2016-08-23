@@ -1,6 +1,6 @@
 include_recipe 'librato::agent'
 
-template "#{node['librato']['plugin_config_path']}/nginx.conf" do
+template "#{node['librato']['plugin_config_path']}/nginx_plus.conf" do
   owner 'root'
   group 'root'
   mode '0644'

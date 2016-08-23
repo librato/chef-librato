@@ -33,9 +33,32 @@ This cookbook configures the Librato Agent and plugins.
 
 This will install the Agent and set up the default plugins (`cpu`, `df`, `disk`, `swap`, `memory`, `load`).
 
+### Supported Plugins
+
+* `cpu`
+* `df`
+* `memory`
+* `load`
+* `disk`
+* `swap`
+* `apache`
+* `nginx`
+* `nginx_plus`
+* `jvm`
+* `memcached`
+* `varnish`
+* `zookeeper`
+* `docker`
+* `elasticsearch`
+* `mongodb`
+* `postgresql`
+* `mysql`
+* `redis`
+* `haproxy`
+
 ### Including a plugin
 
-To include a plugin, simply include the recipe:
+To include a plugin, include the recipe in your run list:
 
 ```json
 {
@@ -46,6 +69,15 @@ To include a plugin, simply include the recipe:
 ```
 
 All of the plugins have sane defaults, but you can modify them via the attributes.
+
+### Using a third-party or upstream plugin that isn't available here
+
+To use a plugin that this cookbook does not directly support (see list of plugins above),
+create a wrapper cookbook and drop the config file and plugin file in the appropriate locations.
+
+Config location: `/opt/collectd/etc/collectd.conf.d/`
+
+Plugin location: `/opt/collectd/share/collectd/`
 
 ## Recipes & their attributes
 
@@ -206,7 +238,7 @@ Each plugin has a set of attributes that you can override.
     
     The MongoDB password to connect with. Defaults to `nil`.
   
-  - `node['librato']['mongodb']['database']`
+  - `node['librato']['mongodb']['databases']`
     
     **Type**: array
     

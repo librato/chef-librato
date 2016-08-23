@@ -2,10 +2,10 @@ LoadPlugin "apache"
 <Plugin "apache">
    <Instance "apache80">
        URL "<%= @protocol %>://<%= @host %><%= @path %>?auto"
-       <% if !@user.empty? -%>
+       <% if !@user.nil? -%>
        User "<%= @user %>"
        <% end -%>
-       <% if !@password.empty? -%>
+       <% if !@password.nil? -%>
        Password "<%= @password %>"
        <% end -%>
    </Instance>

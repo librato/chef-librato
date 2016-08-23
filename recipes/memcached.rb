@@ -6,7 +6,7 @@ template "#{node['librato']['plugin_config_path']}/memcached.conf" do
   mode '0644'
   variables(
     host: node['librato']['memcached']['host'],
-    path: node['librato']['memcached']['port']
+    port: node['librato']['memcached']['port']
   )
   notifies :restart, 'service[collectd]', :delayed
 end

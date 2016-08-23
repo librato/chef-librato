@@ -11,14 +11,14 @@
   <Module "collectd-mongodb">
     Host "<%= @host %>"
     Port "<%= @port %>"
-    <% if !@user.empty? %>
+    <% if !@user.nil? %>
     User "<%= @user %>"
     <% end %>
-    <% if !@password.empty? %>
+    <% if !@password.nil? %>
     Password "<%= @password %>"
     <% end %>
-    <% if !@database.empty? %>
-    Database "admin", <%= @database.map(&:inspect).join(', ') %>
+    <% if !@databases.empty? %>
+    Database "admin", <%= @databases.map(&:inspect).join(', ') %>
     <% end %>
     Name "<%= @name %>"
   </Module>

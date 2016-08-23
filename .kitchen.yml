@@ -49,7 +49,60 @@ suites:
     run_list:
       - recipe[librato::default]
       - recipe[librato::apache]
+      - recipe[librato::elasticsearch]
+      - recipe[librato::jvm]
+      - recipe[librato::mongodb]
+      - recipe[librato::nginx]
+      - recipe[librato::nginx_plus]
+      - recipe[librato::postgresql]
+      - recipe[librato::mysql]
+      - recipe[librato::zookeeper]
+      - recipe[librato::docker]
+      - recipe[librato::haproxy]
+      - recipe[librato::memcached]
+      - recipe[librato::redis]
+      - recipe[librato::varnish]
     attributes:
       librato:
+        email: 'foo@bar.baz'
+        token: '1234abcd'
+        logging:
+          use_log_file: true
+        elasticsearch:
+        jvm:
+        mongodb:
+          databases: ['foo', 'bar', 'baz']
+        nginx:
+          path: '/test-status'
+        nginx_plus:
+          path: '/test-status'
+        postgresql:
+          databases: [
+            {
+              name: 'mydb',
+              instance: 'baz',
+              host: 'localhost',
+              port: 5432,
+              user: 'foo',
+              password: 'baz',
+            }
+          ]
+        mysql:
+          databases: [
+            {
+              name: 'mydb',
+              host: 'localhost',
+              port: 3306,
+              user: 'foo',
+              password: 'baz',
+              innodb_stats: true,
+            }
+          ]
+        zookeeper:
+        docker:
+        haproxy:
+        memcached:
+        redis:
+        varnish:
         apache:
           path: '/test-status'
