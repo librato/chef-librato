@@ -248,7 +248,7 @@ Each plugin has a set of attributes that you can override.
     
     **Type**: string
     
-    TODO Defaults to `mongodb`.
+    Set the name of the plugin instance. Defaults to `mongodb`.
 
 ### Recipe: `mysql`
   - `node['librato']['mysql']['databases']`
