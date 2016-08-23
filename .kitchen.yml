@@ -70,6 +70,26 @@ suites:
           use_log_file: true
         elasticsearch:
         jvm:
+          mbeans: [
+            {
+              'name': 'foo',
+              'object_name': 'objname',
+              'instance_prefix': 'prefix',
+              'instance_from': 'from',
+              'values': [
+                {
+                  'type': 'type',
+                  'table': true,
+                  'attribute': 'att'
+                },
+                {
+                  'type': 'type',
+                  'table': true,
+                  'attribute': 'att'
+                }
+              ]
+            }
+          ]
         mongodb:
           databases: ['foo', 'bar', 'baz']
         nginx:

@@ -83,4 +83,4 @@ node.default['librato']['docker']['port'] = '2735'
 
 node.default['librato']['jvm']['host'] = 'localhost'
 node.default['librato']['jvm']['service_url'] = 'service:jmx:rmi:///jndi/rmi://localhost:17264/jmxrmi'
-node.default['librato']['jvm']['mbeans'] = {}
+node.default['librato']['jvm']['mbeans'] = []

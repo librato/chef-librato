@@ -197,7 +197,23 @@ Each plugin has a set of attributes that you can override.
     
     Format of the hash is:
     ```ruby
-    TODO
+    mbeans = [
+      {
+        'name': 'mbean name',
+        'object_name': 'object name',
+        'instance_prefix': 'instance prefix (optional)',
+        'instance_from': 'instance from (optional)',
+        'values': [
+          {
+            'type': 'value type',
+            'table': true|false,
+            'attribute': 'attribute'
+            'instance_prefix': 'instance prefix (optional)',
+            'instance_from': 'instance from (optional)'
+          }
+        ]
+      }
+    ]
     ```
 
 ### Recipe: `memcached`

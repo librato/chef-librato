@@ -14,18 +14,34 @@ Include "/opt/collectd/share/collectd/jvm_default.conf"
       Collect "compilation"
       Collect "garbage_collector"
       Collect "memory_pool"
+  <% if !@mbeans.empty? %>
+    <% @mbeans.each do |mbean| %>
+      Collect "<%= mbean['name'] %>"
+    <% end %>
+  <% end %>
     </Connection>
 <% if !@mbeans.empty? %>
   <% @mbeans.each do |mbean| %>
     <MBean "<%= mbean['name'] %>">
       ObjectName "<%= mbean['object_name'] %>"
+    <% if !mbean['instance_prefix'].nil? %>
       InstancePrefix "<%= mbean['instance_prefix'] %>"
+    <% end %>
+    <% if !mbean['instance_from'].nil? %>
+      InstanceFrom "<%= mbean['instance_from'] %>"
+    <% end %>
 
-    <% @mbeans['values'].each do |value| %>
+    <% mbean['values'].each do |value| %>
       <Value>
         Type "<%= value['type'] %>"
         Table <%= value['table'] %>
         Attribute "<%= value['attribute'] %>"
+      <% if !value['instance_prefix'].nil? %>
+        InstancePrefix "<%= value['instance_prefix'] %>"
+      <% end %>
+      <% if !value['instance_from'].nil? %>
+        InstanceFrom "<%= value['instance_from'] %>"
+      <% end %>
       </Value>
     <% end %>
     </MBean>

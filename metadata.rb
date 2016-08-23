@@ -4,7 +4,7 @@ maintainer_email 'support@librato.com'
 license          'All rights reserved'
 description      'Installs/Configures the Librato Agent'
 long_description 'Installs/Configures the Librato Agent'
-version          '1.0.0'
+version          '1.1.0'
 
 depends 'yum'
 depends 'yum-epel'
