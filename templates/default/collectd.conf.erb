@@ -10,8 +10,10 @@
 # Global settings for the daemon.                                            #
 ##############################################################################
 
+<% if !@hostname.nil? -%>
 Hostname    "<%= @hostname %>"
-FQDNLookup   <%= @fqdn_lookup -%>
+<% end -%>
+FQDNLookup   <%= @fqdn_lookup %>
 Interval     <%= @interval %>
 
 # Include logging config before plugins collectd logs plugin log entries

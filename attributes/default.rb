@@ -13,8 +13,8 @@ node.default['librato']['token'] = ''
 
 node.default['librato']['config_base'] = '/opt/collectd/etc'
 node.default['librato']['plugin_config_path'] = '/opt/collectd/etc/collectd.conf.d'
-node.default['librato']['hostname'] = node['fqdn']
-node.default['librato']['fqdn_lookup'] = false
+node.default['librato']['hostname'] = nil
+node.default['librato']['fqdn_lookup'] = true
 node.default['librato']['interval'] = 60
 
 node.default['librato']['logging']['use_log_file'] = true

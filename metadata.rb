@@ -5,7 +5,7 @@ license          'All rights reserved'
 description      'Installs/Configures the Librato Agent'
 long_description 'Installs/Configures the Librato Agent'
 source_url       'https://github.com/librato/chef-librato'
-version          '1.1.1'
+version          '1.1.2'
 
 depends 'yum'
 depends 'yum-epel'
