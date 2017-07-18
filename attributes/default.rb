@@ -3,9 +3,9 @@ node.default['librato']['repo_base'] = node['platform'] == 'amazon' ? 'librato-a
 
 case node['platform']
 when 'debian', 'ubuntu'
-  node.default['librato']['version'] = '5.5.0-librato51.251'
+  node.default['librato']['version'] = '5.7.1-librato1.413'
 when 'centos', 'redhat', 'fedora', 'amazon'
-  node.default['librato']['version'] = '5.5.0_librato51.251-0'
+  node.default['librato']['version'] = '5.7.1-librato1.413-0'
 end
 
 node.default['librato']['email'] = ''
